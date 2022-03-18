@@ -3,6 +3,10 @@
   <groupId>demo</groupId>
   <artifactId>customannotation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>11</maven.compiler.release>
+  </properties>
   <dependencies>
  	 <dependency>
 	 	<groupId>org.hibernate.validator</groupId>
@@ -12,7 +16,7 @@
      <dependency>
 	     <groupId>org.glassfish</groupId>
 	     <artifactId>jakarta.el</artifactId>
-	     <version>4.0.1</version>
+	     <version>4.0.2</version>
 	 </dependency>
     
      <dependency>
@@ -29,4 +33,16 @@
 	     <scope>test</scope>
      </dependency>
   </dependencies>
+
+  <build>
+    <pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+        </plugins>
+    </pluginManagement>
+  </build>
 </project>
