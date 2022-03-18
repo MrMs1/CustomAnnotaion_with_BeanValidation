@@ -2,7 +2,7 @@ package customannotation;
 
 public class AnnotationDemo {
 
-	@TimeStamp(formatUnMatchMessage = "フォーマットチェックカスタムメッセージ", inCorrectDateMessage = "存在チェックカスタムメッセージ")
+	@TimeStamp
 	private String date;
 
 	public AnnotationDemo(String date) {
