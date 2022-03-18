@@ -1,0 +1,2 @@
+# CustomAnnotaion_with_BeanValidation
+Bean Validationを用いたカスタムアノテーション作成メモ
