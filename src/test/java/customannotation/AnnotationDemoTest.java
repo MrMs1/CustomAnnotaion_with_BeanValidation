@@ -2,12 +2,9 @@ package customannotation;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Set;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
@@ -26,7 +23,7 @@ class AnnotationDemoTest {
 				.getMessage();
 	}
 
-	private boolean isValidateResult(String fieldName, String value) {
+	private boolean hasValidateResult(String fieldName, String value) {
 		return validator
 				.validateValue(AnnotationDemo.class, fieldName, value)
 				.iterator()
@@ -37,14 +34,14 @@ class AnnotationDemoTest {
 	@DisplayName("dateが2022/01/01 11:11:11のとき、バリエーション結果は存在しない")
 	void dateが存在する日付のときバリエーション結果は存在しない() {
 		// 検証
-		assertEquals(false, isValidateResult(DATE, "2022/01/01 11:11:11"));
+		assertEquals(false, hasValidateResult(DATE, "2022/01/01 11:11:11"));
 	}
 
 	@Test
 	@DisplayName("dateがnullのとき、バリエーション結果は存在しない")
 	void dateがnullのときバリエーション結果は存在しない() {
 		// 検証
-		assertEquals(false, isValidateResult(DATE, null));
+		assertEquals(false, hasValidateResult(DATE, null));
 	}
 
 	@Test
