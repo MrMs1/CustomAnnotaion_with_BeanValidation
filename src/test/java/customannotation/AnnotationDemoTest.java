@@ -40,7 +40,7 @@ class AnnotationDemoTest {
 			@DisplayName("dateがnullのとき、バリエーション結果は存在しない")
 			void dateがnullのときバリエーション結果は存在しない() {
 				// 検証
-				assertEquals(true, hasValidateResult(DATE, null));
+				assertEquals(false, hasValidateResult(DATE, null));
 			}
 		}
 
