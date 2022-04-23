@@ -22,6 +22,11 @@ jobs:
         distribution: 'adopt'
     - name: Run the Maven verify phase
       run: mvn --batch-mode --update-snapshots verify
+    - name: Publish Unit Test Results
+      uses: EnricoMi/publish-unit-test-result-action/composite@v1
+      if: always()
+      with:
+        files: "test-results/**/*.xml"
     - name: JUnit Report Action
       # You may pin to the exact commit or the version.
       # uses: mikepenz/action-junit-report@e0d5079936035c5102d78f789dc374d9a2bbfec7
