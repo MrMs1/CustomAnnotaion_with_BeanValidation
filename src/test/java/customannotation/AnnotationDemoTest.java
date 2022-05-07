@@ -1,6 +1,7 @@
 package customannotation;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -40,7 +41,7 @@ class AnnotationDemoTest {
 			@DisplayName("dateがnullのとき、バリエーション結果は存在しない")
 			void dateがnullのときバリエーション結果は存在しない() {
 				// 検証
-				assertEquals(false, hasValidateResult(DATE, null));
+				assertFalse(hasValidateResult(DATE, null));
 			}
 		}
 
@@ -60,7 +61,7 @@ class AnnotationDemoTest {
 			@DisplayName("dateが2022/01/01 11:11:11のとき、バリエーション結果は存在しない")
 			void dateが存在する日付のときバリエーション結果は存在しない() {
 				// 検証
-				assertEquals(false, hasValidateResult(DATE, "2022/01/01 11:11:11"));
+				assertFalse(hasValidateResult(DATE, "2022/01/01 11:11:11"));
 			}
 
 			@Test
